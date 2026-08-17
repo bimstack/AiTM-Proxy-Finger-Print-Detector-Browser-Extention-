@@ -11,7 +11,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Manifest-V3-blue?logo=googlechrome&logoColor=white" alt="Manifest V3" />
   <img src="https://img.shields.io/badge/Chrome-%E2%89%A5116-green?logo=googlechrome&logoColor=white" alt="Chrome ≥116" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License MIT" />
   <img src="https://img.shields.io/badge/Version-1.0.0-blueviolet" alt="Version 1.0.0" />
   <img src="https://img.shields.io/badge/Zero_Data_Collection-✓-brightgreen" alt="Privacy" />
 </p>
