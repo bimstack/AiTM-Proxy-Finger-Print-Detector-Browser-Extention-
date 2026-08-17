@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AiTM Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <path d="M12 8v4"></path>
+        <path d="M12 16h.01"></path>
+      </svg>
+      AiTM Detector
+    </div>
+  </header>
+
+  <div id="loading-view" class="loading-state">
+    <div class="spinner"></div>
+    <div>Analyzing connection...</div>
+  </div>
+
+  <div id="main-view" class="hidden">
+    <div class="status-banner">
+      <div class="hostname mono" id="hostname-display">example.com</div>
+      <div class="badge" id="classification-badge">SAFE</div>
+    </div>
+
+    <main>
+      <section class="gauge-container">
+        <div class="gauge" id="threat-gauge">
+          <div class="gauge-value mono" id="threat-score">0</div>
+        </div>
+        <div class="gauge-label">Threat Score</div>
+      </section>
+
+      <section class="modules" id="modules-container">
+        <!-- Module bars will be injected here -->
+      </section>
+
+      <section class="anomalies-section" id="anomalies-container">
+        <div class="section-title">
+          Detected Anomalies <span class="badge" id="anomaly-count-badge">0</span>
+        </div>
+        <div class="anomaly-list" id="anomaly-list">
+          <!-- Anomaly cards will be injected here -->
+        </div>
+        <div class="empty-state hidden" id="empty-state">
+          <div class="empty-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="empty-title">Connection is Secure</div>
+          <div class="empty-desc">No indicators of proxy interference or AiTM attacks detected.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="last-checked">Last checked: Just now</div>
+      <div>v1.0.0</div>
+    </footer>
+  </div>
+
+  <!-- Templates -->
+  <template id="module-row-template">
+    <div class="module-row">
+      <div class="module-header">
+        <span class="module-name">Module Name</span>
+        <span class="module-score mono">0%</span>
+      </div>
+      <div class="module-bar-bg">
+        <div class="module-bar-fill"></div>
+      </div>
+    </div>
+  </template>
+
+  <template id="anomaly-card-template">
+    <div class="anomaly-card">
+      <div class="anomaly-header">
+        <div class="anomaly-title-area">
+          <div class="anomaly-type">Anomaly Type</div>
+          <div class="anomaly-module">Module</div>
+        </div>
+        <div class="badge severity-badge">LOW</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+      <div class="anomaly-detail">Detail text</div>
+      <pre class="anomaly-evidence mono">{}</pre>
+      <div class="anomaly-meta">time</div>
+    </div>
+  </template>
+
+  <script src="popup.js"></script>
+</body>
+</html>
