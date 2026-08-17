@@ -220,7 +220,7 @@ Contributions are welcome! If you'd like to improve the extension:
 4. Push to your branch (`git push origin feature/my-improvement`)
 5. Open a Pull Request
 
-
+---
 
 <p align="center">
   <sub>Built to defend against the evolving threat of AiTM phishing. Stay safe. 🛡️</sub>
